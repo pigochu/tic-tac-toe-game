@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main  # 每次 push main 分支就自動部署
+permissions:
+  contents: read          # 讀取 repo 內容
+  pages: write            # 部署到 GitHub Pages
+  id-token: write         # 讓 deploy-pages 能生成 ID Token
 
 jobs:
   build-and-deploy:
