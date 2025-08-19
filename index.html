@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>井字遊戲</title>
+  <!-- FlyonUI: 使用 CDN 引入 FlyonUI v2.4.0 的樣式（若已透過 npm 安裝，可改回 node_modules 引用） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flyon-ui@2.4.0/dist/flyon.min.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- FlyonUI overlay placed outside Vue root to avoid portal/move conflicts -->
+    <div id="game-result-overlay" class="overlay hidden" data-overlay>
+      <div class="overlay-animation-target">
+        <div class="modal">
+          <div class="modal-dialog modal-dialog-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">遊戲結果</h3>
+              </div>
+              <div class="modal-body">
+                <p id="game-result-overlay-message">&nbsp;</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" data-overlay="#game-result-overlay">關閉</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <!-- FlyonUI JS is imported in src/main.ts; avoid duplicate node_modules script/link -->
+  </body>
+</html>

@@ -1,0 +1,24 @@
+
+/* variants.css import removed: not needed unless using FlyonUI JS components; keep plugin enabled via tailwind.config.cjs */
+
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+@plugin "flyonui";
+
+* { box-sizing: border-box; }
+html,body,#app { height: 100%; margin: 0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+.app-shell { display: flex; flex-direction: column; min-height: 100vh; padding: 2rem 0; }
+.header { background: #0f172a; color: #fff; padding: 1rem; text-align: center; }
+.container { display: grid; grid-template-columns: 3fr 1fr; gap: 1rem; padding: 1rem; align-items: start; }
+.board-area { display:flex; justify-content:center; align-items:center; }
+.side-area { padding: 1rem; }
+.footer { margin-top: auto; padding: 1rem; text-align: center; color: #666; }
+
+/* Simple responsive adjustments */
+@media (max-width: 800px) {
+  .container { grid-template-columns: 1fr; }
+}
+
+/* Debug / override for FlyonUI overlay if it's hidden by other rules */
+/* overlay styles intentionally left to FlyonUI */

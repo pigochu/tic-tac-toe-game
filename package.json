@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe-game",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.0",
+    "flyonui": "^2.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+  "tailwindcss": "^4.0.0",
+    "postcss": "^8.4.0",
+  "autoprefixer": "^10.4.0",
+  "@tailwindcss/postcss": "^4.1.12"
+  }
+}

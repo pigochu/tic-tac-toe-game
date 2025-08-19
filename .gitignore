@@ -1,0 +1,42 @@
+# Node dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local environment files
+.env.local
+.env.*.local
+
+# Mac / Linux / Windows 系統垃圾檔
+.DS_Store
+Thumbs.db
+
+# Optional cache
+.cache/
+.eslintcache
+.stylelintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage (測試覆蓋率)
+coverage/
+
+# GitHub Actions / CI artifacts
+*.log
