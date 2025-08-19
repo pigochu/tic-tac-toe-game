@@ -1,0 +1,55 @@
+name: Deploy Vue + TS App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 每次 push main 分支就自動部署
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 取得程式碼
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 設定 Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      # 3. 快取 node_modules
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 4. 安裝依賴
+      - name: Install dependencies
+        run: npm install
+
+      # 5. Build 專案
+      - name: Build project
+        run: npm run build
+
+      # 6. 設定 GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 7. 上傳 build 產物（dist 資料夾）
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist  # Vue build 出來的資料夾
+
+      # 8. 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
